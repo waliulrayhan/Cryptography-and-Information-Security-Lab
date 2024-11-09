@@ -6,10 +6,10 @@ def multiplicative_inverse(K1):
     return None  # No inverse if none found
 
 # Function to calculate the greatest common divisor (GCD)
-def gcd(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
+def gcd(a, b):  # Define a function named 'gcd' that takes two parameters 'a' and 'b'
+    while b != 0:  # Start a loop that continues as long as 'b' is not zero
+        a, b = b, a % b  # Simultaneously update 'a' to the value of 'b' and 'b' to the remainder of 'a' divided by 'b'
+    return a  # Once 'b' becomes zero, return 'a' as the GCD
 
 # Function to encrypt using affine cipher
 def encrypt_affine_cipher(plaintext, K1, K2):

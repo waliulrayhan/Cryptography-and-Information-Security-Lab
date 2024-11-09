@@ -5,6 +5,12 @@ def multiplicative_inverse(key):
             return i
     return None  # No inverse if none found
 
+# Function to calculate the greatest common divisor (GCD)
+def gcd(a, b):  # Define a function named 'gcd' that takes two parameters 'a' and 'b'
+    while b != 0:  # Start a loop that continues as long as 'b' is not zero
+        a, b = b, a % b  # Simultaneously update 'a' to the value of 'b' and 'b' to the remainder of 'a' divided by 'b'
+    return a  # Once 'b' becomes zero, return 'a' as the GCD
+
 # Function to encrypt using multiplicative cipher
 def encrypt_multiplicative_cipher(plaintext, key):
     if gcd(key, 26) != 1:
@@ -37,12 +43,6 @@ def decrypt_multiplicative_cipher(ciphertext, key):
         else:
             plaintext += char  # Non-alphabet characters remain unchanged
     return plaintext
-
-# Function to calculate the greatest common divisor (GCD)
-def gcd(a, b):  # Define a function named 'gcd' that takes two parameters 'a' and 'b'
-    while b != 0:  # Start a loop that continues as long as 'b' is not zero
-        a, b = b, a % b  # Simultaneously update 'a' to the value of 'b' and 'b' to the remainder of 'a' divided by 'b'
-    return a  # Once 'b' becomes zero, return 'a' as the GCD
 
 # Main program to accept user input
 if __name__ == "__main__":
