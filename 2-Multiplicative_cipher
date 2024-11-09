@@ -39,16 +39,17 @@ def decrypt_multiplicative_cipher(ciphertext, key):
     return plaintext
 
 # Function to calculate the greatest common divisor (GCD)
-def gcd(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
+def gcd(a, b):  # Define a function named 'gcd' that takes two parameters 'a' and 'b'
+    while b != 0:  # Start a loop that continues as long as 'b' is not zero
+        a, b = b, a % b  # Simultaneously update 'a' to the value of 'b' and 'b' to the remainder of 'a' divided by 'b'
+    return a  # Once 'b' becomes zero, return 'a' as the GCD
 
 # Main program to accept user input
 if __name__ == "__main__":
     # Input from the user
     plaintext = input("Enter the plaintext: ")
     key = int(input("Enter the multiplicative key: "))
+    # key = 7; Ensure that the key is coprime with 26
 
     # Encrypt the plaintext
     try:
