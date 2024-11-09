@@ -9,7 +9,7 @@ def encrypt_additive_cipher(plaintext, key):
             ciphertext += encrypted_char
         else:
             ciphertext += char  # Non-alphabet characters remain unchanged
-    return ciphertext
+    return ciphertext.upper()
 
 # Function to decrypt the ciphertext using additive cipher
 def decrypt_additive_cipher(ciphertext, key):
@@ -22,7 +22,7 @@ def decrypt_additive_cipher(ciphertext, key):
             plaintext += decrypted_char
         else:
             plaintext += char  # Non-alphabet characters remain unchanged
-    return plaintext
+    return plaintext.lower()
 
 # Main program to accept user input
 if __name__ == "__main__":

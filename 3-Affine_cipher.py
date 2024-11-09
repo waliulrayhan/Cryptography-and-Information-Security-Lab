@@ -25,7 +25,7 @@ def encrypt_affine_cipher(plaintext, K1, K2):
             ciphertext += encrypted_char
         else:
             ciphertext += char  # Non-alphabet characters remain unchanged
-    return ciphertext
+    return ciphertext.upper()
 
 # Function to decrypt using affine cipher
 def decrypt_affine_cipher(ciphertext, K1, K2):
@@ -42,7 +42,7 @@ def decrypt_affine_cipher(ciphertext, K1, K2):
             plaintext += decrypted_char
         else:
             plaintext += char  # Non-alphabet characters remain unchanged
-    return plaintext
+    return plaintext.lower()
 
 # Main program to accept user input
 if __name__ == "__main__":

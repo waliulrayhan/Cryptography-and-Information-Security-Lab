@@ -20,9 +20,9 @@ def encrypt_auto_key(plaintext, initial_key):
     for i, char in enumerate(plaintext):  # Iterate through each character in the plaintext with its index.
         p_val = char_to_int(char)  # Convert the current character to its integer value.
         c_val = (p_val + key_stream[i]) % 26  # Add the corresponding key stream value and take modulo 26 to get the ciphertext character's value.
-        ciphertext += int_to_char(c_val).upper()  # Convert the integer value to a character, make it uppercase, and add it to the ciphertext.
+        ciphertext += int_to_char(c_val)  # Convert the integer value to a character, make it uppercase, and add it to the ciphertext.
 
-    return ciphertext  # Return the final encrypted ciphertext.
+    return ciphertext.upper()  # Return the final encrypted ciphertext.
 
 # Function to decrypt using Auto Key cipher
 def decrypt_auto_key(ciphertext, initial_key):
@@ -40,13 +40,13 @@ def decrypt_auto_key(ciphertext, initial_key):
         # Append the decrypted character value to the key stream
         key_stream.append(p_val)  # Add the integer value of the decrypted character to the key stream for use in subsequent steps.
 
-    return plaintext  # Return the final decrypted plaintext.
+    return plaintext.lower()  # Return the final decrypted plaintext.
 
 # Main program to accept user input
 if __name__ == "__main__":
     # Input from the user
     plaintext = input("Enter the plaintext: ")  # Prompt the user to enter the plaintext.
-    initial_key = int(input("Enter the keyword: "))  # Prompt the user to enter the initial key (as an integer).
+    initial_key = int(input("Enter the Initial key: "))  # Prompt the user to enter the initial key (as an integer).
 
     # Encrypt the plaintext
     ciphertext = encrypt_auto_key(plaintext, initial_key)  # Call the encryption function.
