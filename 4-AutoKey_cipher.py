@@ -55,3 +55,4 @@ if __name__ == "__main__":
     # Decrypt the ciphertext
     decrypted_text = decrypt_auto_key(ciphertext, initial_key)  # Call the decryption function.
     print(f"Decrypted Text (should match the original plaintext): {decrypted_text}")  # Print the decrypted text and verify it matches the original plaintext.
+
